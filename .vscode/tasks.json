@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build CSPICE Space Sim",
+            "command": "cmd",
+            "args": [
+                "/c",
+                // This line loads the VS environment AND THEN runs cl.exe
+                "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && cl.exe /Zi /EHsc /nologo /I${workspaceFolder}\\cspice\\include ${file} ${workspaceFolder}\\cspice\\lib\\cspice.lib /Fe:${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "default": true
+            }
+        }
+    ]
+}

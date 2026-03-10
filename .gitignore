@@ -1,1 +1,22 @@
-cspice/
+# Visual Studio / Compiler Outputs
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.out
+*.csv
+
+# CSPICE Binaries and Docs (Save space)
+cspice/exe/
+cspice/doc/
+cspice/lib/*.lib
+cspice/lib/*.a
+
+# NASA Kernels (These are too big for GitHub)
+# Keep the 'data' folder, but ignore the big binary files inside
+data/*.bsp
+data/*.bc
+data/*.bpc
+
+# Keep small text kernels (leap seconds) if you want
+!data/*.tls
